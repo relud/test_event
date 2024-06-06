@@ -1,0 +1,16 @@
+name: Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      event_name:
+        type: string
+      payload:
+        type: string
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show inputs
+        run: |
+          echo "${{inputs.event_name}}"
+          echo "${{inputs.payload}}"
